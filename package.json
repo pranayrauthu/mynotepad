@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "copy_node_modules_to_public": "mv \"./node_modules/monaco-editor\" \"./public\"",
+    "postcopy_node_modules_to_public": "npm run build",
+    "publish": "npm run copy_node_modules_to_public",
+    "prepublish": "npm run install",
+    "build": "mv \"./src/index.html\" \"./public\""
   },
   "keywords": [],
   "author": "",
